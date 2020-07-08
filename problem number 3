@@ -1,0 +1,18 @@
+#problem number 3 - find the largest prime factor of a number(for example 600851475143)
+def get_largest_prime(N):
+    i=1
+    pot_primes=[1]
+    while(i*i<=N):
+        if(N%i==0):
+            pot_primes.append(i)
+        i+=2
+    primes=pot_primes
+    for prime in pot_primes:
+        check=True
+        for j in range(len(pot_primes)):
+            if(prime<pot_primes[j] and pot_primes[j]%prime==0):
+                check=False
+        if(not check):
+            primes.pop()
+    largest_prime=max(primes)
+    return(largest_prime)
