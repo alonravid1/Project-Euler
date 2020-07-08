@@ -1,0 +1,14 @@
+#problem number 7- find nth prime number
+def get_nth_prime(N=10001):
+    primes=[2,3]
+    i=3
+    while(len(primes)<N):
+        isprime=True
+        for prime in primes:
+            if(i%prime==0):
+                isprime=False
+                break
+        if(isprime):
+            primes.append(i)
+        i+=2
+    return(primes[-1])
