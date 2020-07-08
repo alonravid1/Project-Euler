@@ -1,0 +1,9 @@
+#problem 2-find sum of even fib numbers smaller than 4000000
+
+def fibonacci(Fib1,Fib2,sum):
+    if(Fib2%2==0):
+        sum+=Fib2
+    Fib3=Fib1+Fib2
+    if(Fib3>4000000):
+        return sum
+    return(fibonacci(Fib2,Fib3,sum))
