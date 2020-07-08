@@ -1,0 +1,13 @@
+problem number 4 - find the largest palindrome product of two numbers within the same power of 10
+def get_largest_palindrome():
+    largest_pal=0
+    for i in range(100,1000):
+        for j in range(100,1000):
+            N=str(i*j)
+            check=True
+            for p in range(1,len(N)+1):
+                if(N[p-1]!=N[-p]):
+                    check=False
+            if(check):
+                largest_pal=max(int(N),largest_pal)
+    return(largest_pal)
