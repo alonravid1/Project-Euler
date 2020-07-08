@@ -1,0 +1,12 @@
+#problem number 5 - find the Smallest multiple of all numbers from 1 to 20
+def get_smallest_multiple():
+    counter=2
+    i=9699660 #product of all primes in range
+    while(counter<20):
+        counter=2
+        for j in range(3,21):
+            if(i%j==0):
+                counter+=1
+            
+        i+=20
+    return(i-20)
